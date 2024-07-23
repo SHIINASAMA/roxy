@@ -1,0 +1,28 @@
+name: 'doxygen-with-static'
+description: 'Bundling static assets into doxygen output.'
+inputs:
+  DOXYGEN_AWESOME_CSS_VERSION:
+    description: 'The version of doxygen-awesome-css.'
+    required: false
+    default: 'v2.3.3'
+  DOXYGEN_CONTEXT:
+    description: 'Doxygen working dir.'
+    required: true
+  DOXYFILE:
+    description: 'The path of doxyfile in PROJECT_PATH.'
+    required: true
+  PROJECT_PATH:
+    description: 'The project path.'
+    required: true
+  OUTPUT_PATH:
+    description: 'Doxygen output path.'
+    required: true
+runs:
+  using: 'docker'
+  image: 'dockerfile'
+  with:
+   ${{ inputs.DOXYGEN_AWESOME_CSS_VERSION }}
+   ${{ inputs.DOXYGEN_CONTEXT }}
+   ${{ inputs.DOXYFILE }}
+   ${{ inputs.PROJECT_PATH }}
+   ${{ inputs.OUTPUT_PATH }}
