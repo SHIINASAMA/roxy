@@ -20,9 +20,9 @@ inputs:
 runs:
   using: 'docker'
   image: 'dockerfile'
-  with:
-   ${{ inputs.DOXYGEN_AWESOME_CSS_VERSION }}
-   ${{ inputs.DOXYGEN_CONTEXT }}
-   ${{ inputs.DOXYFILE }}
-   ${{ inputs.PROJECT_PATH }}
-   ${{ inputs.OUTPUT_PATH }}
+  env:
+    DOXYGEN_AWESOME_CSS_VERSION: ${{ inputs.DOXYGEN_AWESOME_CSS_VERSION }}
+    DOXYGEN_CONTEXT: ${{ inputs.DOXYGEN_CONTEXT }}
+    DOXYFILE: ${{ inputs.DOXYFILE }}
+    PROJECT_PATH: ${{ inputs.PROJECT_PATH }}
+    OUTPUT_PATH: ${{ inputs.OUTPUT_PATH }}
