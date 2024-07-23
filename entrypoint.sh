@@ -9,5 +9,5 @@ DOXYFILE_PATH="$PROJECT_PATH/$DOXYFILE"
 
 mkdir -p $OUTPUT_PATH
 cd $DOXYGEN_CONTEXT
-mv $PROJECT_PATH/static $OUTPUT_PATH/static
+cp -r $PROJECT_PATH/static $OUTPUT_PATH/static
 /usr/bin/doxygen $DOXYFILE_PATH
