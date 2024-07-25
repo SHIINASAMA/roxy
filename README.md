@@ -55,7 +55,7 @@ docker run -e DOXYGEN_CONTEXT_FOLDER=/project -e DOXYFILE=Doxyfile -e PROJECT_PA
  - `OUTPUT_FOLDER`:
    doxygen folder in PROJECT_PATH
 
-## Apply Awesome-doxygen-css
+## Apply doxygen-awesome-css
 
 Doxygen can not overwrite option via cli, You may set options by manually:
 
