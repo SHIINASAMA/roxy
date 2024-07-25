@@ -5,24 +5,30 @@ inputs:
     description: 'The version of doxygen-awesome-css.'
     required: false
     default: 'v2.3.3'
-  DOXYGEN_CONTEXT:
-    description: 'Doxygen working dir.'
-    required: true
+  DOXYGEN_CONTEXT_FOLDER:
+    description: 'Doxygen working dir in PROJECT_PATH.'
+    required: false
+    default: '/github/workspace'
   DOXYFILE:
     description: 'The path of doxyfile in PROJECT_PATH.'
     required: true
   PROJECT_PATH:
     description: 'The project path.'
+    required: false
+    default: '/github/workspace'
+  RESOURCE_FOLDER:
+    description: 'Resource dir in PROJECT_PATH'
     required: true
-  OUTPUT_PATH:
-    description: 'Doxygen output path.'
+  OUTPUT_FOLDER:
+    description: 'Doxygen output dir in PROJECT_PATH.'
     required: true
 runs:
   using: 'docker'
   image: 'dockerfile'
   env:
     DOXYGEN_AWESOME_CSS_VERSION: ${{ inputs.DOXYGEN_AWESOME_CSS_VERSION }}
-    DOXYGEN_CONTEXT: ${{ inputs.DOXYGEN_CONTEXT }}
+    DOXYGEN_CONTEXT_FOLDER: ${{ inputs.DOXYGEN_CONTEXT_FOLDER }}
     DOXYFILE: ${{ inputs.DOXYFILE }}
     PROJECT_PATH: ${{ inputs.PROJECT_PATH }}
-    OUTPUT_PATH: ${{ inputs.OUTPUT_PATH }}
+    RESOURCE_FOLDER: ${{ inputs.RESOURCE_FOLDER }}
+    OUTPUT_FOLDER: ${{ inputs.OUTPUT_FOLDER }}

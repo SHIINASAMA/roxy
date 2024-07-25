@@ -1,0 +1,12 @@
+build:
+  image: reg.mikumikumi.xyz/base/kaniko-builder
+  variables:
+    BUILD_CONTEXT: .
+    BUILD_DOCKERFILE: dockerfile
+  script:
+    - build
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes:
+        - dockerfile
+      when: always
