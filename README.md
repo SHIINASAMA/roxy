@@ -6,8 +6,6 @@ Support GitHub README/Pages, GitLab README/Pages.
 
 ## Usage
 
-example from [sese](https://github.com/libsese/sese).
-
 ### GitHub Action
 
 [Source](https://github.com/libsese/sese)
