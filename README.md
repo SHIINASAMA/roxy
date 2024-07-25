@@ -10,6 +10,8 @@ example from [sese](https://github.com/libsese/sese).
 
 ### GitHub Action
 
+[Source](https://github.com/libsese/sese)
+
 ```yml
 - name: Build docs
   uses: SHIINASAMA/roxy@1.1
@@ -21,13 +23,29 @@ example from [sese](https://github.com/libsese/sese).
 
 ### GitLab CI
 
+[Source](https://gitlab.mikumikumi.xyz/kaoru/roxy-example)
+
 ```yml
-build:
+stages:
+  - deploy
+
+pages:
+  stage: deploy
   image: reg.mikumikumi.xyz/base/roxy
   variables:
-    DOXYFILE: 'docs/Doxyfile'
-    RESOURCE_FOLDER: 'static'
-    OUTPUT_FOLDER: 'build/html'
+    PROJECT_PATH: /builds/kaoru/roxy-example
+    DOXYFILE: Doxyfile
+    RESOURCE_FOLDER: static
+    OUTPUT_FOLDER: build/docs
+  script:
+    - /usr/local/bin/entrypoint.sh
+    - mv build/docs public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      when: always
 ```
 
 ### docker
