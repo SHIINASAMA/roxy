@@ -31,7 +31,7 @@ docker run -e DOXYGEN_CONTEXT_FOLDER=/project -e DOXYFILE=Doxyfile -e PROJECT_PA
 
 ## Apply Awesome-doxygen-css
 
-Doxygen can not overwrite option via cli, You may set options by manually:s
+Doxygen can not overwrite option via cli, You may set options by manually:
 
 ```ini
 GENERATE_HTML=YES
