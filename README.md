@@ -6,9 +6,35 @@ Support GitHub README/Pages, GitLab README/Pages.
 
 ## Usage
 
+example from [sese](https://github.com/libsese/sese).
+
+### GitHub Action
+
+```yml
+- name: Build docs
+  uses: SHIINASAMA/roxy@1.1
+  with:
+    DOXYFILE: 'docs/Doxyfile'
+    RESOURCE_FOLDER: 'static'
+    OUTPUT_FOLDER: 'build/html'
+```
+
+### GitLab CI
+
+```yml
+build:
+  image: reg.mikumikumi.xyz/base/roxy
+  variables:
+    DOXYFILE: 'docs/Doxyfile'
+    RESOURCE_FOLDER: 'static'
+    OUTPUT_FOLDER: 'build/html'
+```
+
+### docker
+
 ```sh
 docker build -t roxy .
-docker run -e DOXYGEN_CONTEXT_FOLDER=/project -e DOXYFILE=Doxyfile -e PROJECT_PATH=/project -e OUTPUT_PATH=/project/build/html -v .:/project roxy
+docker run -e DOXYGEN_CONTEXT_FOLDER=/project -e DOXYFILE=Doxyfile -e PROJECT_PATH=/sese -e OUTPUT_PATH=/project/build/html -v .:/sese roxy
 ```
 
 > [!NOTE]
