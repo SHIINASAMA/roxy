@@ -32,7 +32,7 @@ pages:
   image: reg.mikumikumi.xyz/base/roxy
   variables:
     PROJECT_PATH: /builds/kaoru/roxy-example
-    DOXYFILE: Doxyfile
+    DOXYFILE: docs/Doxyfile
     RESOURCE_FOLDER: static
     OUTPUT_FOLDER: build/docs
   script:
@@ -48,9 +48,11 @@ pages:
 
 ### docker
 
+[Source](https://github.com/libsese/sese)
+
 ```sh
 docker build -t roxy .
-docker run -e DOXYGEN_CONTEXT_FOLDER=/project -e DOXYFILE=Doxyfile -e PROJECT_PATH=/sese -e OUTPUT_PATH=/project/build/html -v .:/sese roxy
+docker run --rm -e DOXYFILE=docs/Doxyfile -e PROJECT_PATH=/project -e OUTPUT_FOLDER=build/html -e RESOURCE_FOLDER=static -v .:/project roxy
 ```
 
 > [!NOTE]
