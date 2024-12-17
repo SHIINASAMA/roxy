@@ -18,7 +18,7 @@ RUN apk add curl unzip doxygen
 
 RUN curl -o doxygen.zip -L https://github.com/jothepro/doxygen-awesome-css/archive/refs/tags/${DOXYGEN_AWESOME_CSS_VERSION}.zip && \
     unzip doxygen.zip && rm doxygen.zip && \
-    mv doxygen-awesome-css-2.3.3 doxygen-awesom-css
+    mv doxygen-awesome-css-2.3.3 doxygen-awesome-css
 
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh
 
